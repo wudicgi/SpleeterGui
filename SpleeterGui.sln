@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpleeterGui", "SpleeterGui\SpleeterGui.csproj", "{943349B5-F7B4-430C-A72E-BCEF88076B3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{943349B5-F7B4-430C-A72E-BCEF88076B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{943349B5-F7B4-430C-A72E-BCEF88076B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{943349B5-F7B4-430C-A72E-BCEF88076B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{943349B5-F7B4-430C-A72E-BCEF88076B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {479E8788-7115-4372-B751-30672C4C5116}
+	EndGlobalSection
+EndGlobal

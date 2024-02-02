@@ -1,0 +1,461 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SpleeterGui\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-02 22:50+0800\n"
+"PO-Revision-Date: 2024-02-02 22:50+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: I18n._;I18n._p:1c,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: bin\n"
+"X-Poedit-SearchPathExcluded-1: obj\n"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\DataStructure\SpleeterModelItem.cs:24
+msgid "(vocals, accompaniment)"
+msgstr "(人声, 伴奏)"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\DataStructure\SpleeterModelItem.cs:28
+msgid "(vocals, drums, bass, other)"
+msgstr "(人声, 鼓, 贝斯, 其它)"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\DataStructure\SpleeterModelItem.cs:32
+msgid "(vocals, drums, bass, piano, other)"
+msgstr "(人声, 鼓, 贝斯, 钢琴, 其它)"
+
+#: MainWindow.xaml:239
+msgid "11kHz (normal)"
+msgstr "11kHz (默认)"
+
+#: MainWindow.xaml:285
+msgid "128kbps"
+msgstr "128kbps"
+
+#: MainWindow.xaml:241
+msgid "16kHz (high quality)"
+msgstr "16kHz (高质量)"
+
+#: MainWindow.xaml:287
+msgid "192kbps"
+msgstr "192kbps"
+
+#: MainWindow.xaml:243
+msgid "22kHz (may produce artifacts)"
+msgstr "22kHz (可能产生失真)"
+
+#: MainWindow.xaml:289
+msgid "256kbps"
+msgstr "256kbps"
+
+#: MainWindow.xaml:291
+msgid "320kbps"
+msgstr "320kbps"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:933
+#, csharp-format
+msgid ""
+"A total of {0} files failed to be added, the files at the specified path may "
+"not exist."
+msgstr "共有 {0} 个文件添加失败，指定路径的文件可能不存在。"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1163
+msgid "Aborted"
+msgstr "中止"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\AboutWindow.xaml.cs:26
+msgid "About"
+msgstr "关于"
+
+#: MainWindow.xaml:34 MainWindow.xaml:204
+msgid "Add Files..."
+msgstr "添加文件..."
+
+#: MainWindow.xaml:36 MainWindow.xaml:206
+msgid "Add Folders..."
+msgstr "添加文件夹..."
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:800
+msgid "Add files"
+msgstr "添加文件"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:825
+msgid "Add folders"
+msgstr "添加文件夹"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:803
+msgid "All files"
+msgstr "所有文件"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1129
+#, csharp-format
+msgid "An exception occurred during processing:{0}{1}{0}{0}{2}"
+msgstr "处理过程中产生异常:{0}{1}{0}{0}{2}"
+
+#: MainWindow.xaml:147
+msgid "Audio Files:"
+msgstr "音频文件:"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:804
+msgid "Audio files"
+msgstr "音频文件"
+
+#: AboutWindow.xaml:47
+msgid "Author's Blog:"
+msgstr "作者的 Blog:"
+
+#: MainWindow.xaml:281
+msgid "Bitrate:"
+msgstr "比特率:"
+
+#: MainWindow.xaml:312
+msgid "Browse..."
+msgstr "浏览..."
+
+#: D:\Projects\SpleeterGui\SpleeterGui\DataStructure\AudioFileItem.cs:99
+msgid "Cancelled"
+msgstr "已取消"
+
+#: MainWindow.xaml:213
+msgid "Clear All"
+msgstr "移除全部"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:397
+msgid "Command lines"
+msgstr "命令行"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1194
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1199
+msgid "Completed"
+msgstr "已完成"
+
+#: ConsoleWindow.xaml:10
+msgid "Console Output"
+msgstr "命令行输出"
+
+#: MainWindow.xaml:346
+msgid "Current File:"
+msgstr "当前文件:"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1098
+msgid "Do you want to continue processing?"
+msgstr "要继续处理吗？"
+
+#: MainWindow.xaml:39
+msgid "E_xit"
+msgstr "退出(_X)"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:674
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:682
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1031
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1131
+msgid "Error"
+msgstr "错误"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:189
+#, csharp-format
+msgid "Error occurred: {0}"
+msgstr "有错误发生: {0}"
+
+#: MainWindow.xaml:275
+msgid "FLAC"
+msgstr "FLAC"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\DataStructure\AudioFileItem.cs:95
+msgid "Failed"
+msgstr "失败"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:934
+msgid "Failed to add some files"
+msgstr "部分文件添加失败"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1099
+#, csharp-format
+msgid "Failed to process file {0}"
+msgstr "处理文件 {0} 失败"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1315
+#, csharp-format
+msgid "Failed to run Spleeter program:{0}{1}"
+msgstr "运行 Spleeter 程序失败:{0}{1}"
+
+#: MainWindow.xaml:167
+msgid "Filename"
+msgstr "文件名"
+
+#: MainWindow.xaml:295
+msgid "Folder:"
+msgstr "文件夹:"
+
+#: MainWindow.xaml:267
+msgid "Format:"
+msgstr "格式:"
+
+#: AboutWindow.xaml:42
+msgid "GitHub:"
+msgstr "GitHub:"
+
+#: MainWindow.xaml:133
+msgid "Input"
+msgstr "输入"
+
+#: MainWindow.xaml:273
+msgid "M4A"
+msgstr "M4A"
+
+#: MainWindow.xaml:271
+msgid "MP3"
+msgstr "MP3"
+
+#: MainWindow.xaml:231
+msgid "Model:"
+msgstr "模型:"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:199
+msgid "Not found \"models\" folder"
+msgstr "没有找到 \"models\" 文件夹"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:194
+msgid "Not found any folder in \"models\" folder"
+msgstr "在 \"models\" 文件夹中没有找到任何文件夹"
+
+#: AboutWindow.xaml:116
+msgid "OK"
+msgstr "确定"
+
+#: AboutWindow.xaml:86
+msgid "Open-source components used in SpleeterMsvcExe:"
+msgstr "SpleeterMsvcExe 所用开源组件:"
+
+#: MainWindow.xaml:322
+msgid "Other Options:"
+msgstr "其它命令行选项:"
+
+#: MainWindow.xaml:248
+msgid "Output"
+msgstr "输出"
+
+#: MainWindow.xaml:340
+msgid "Overall:"
+msgstr "整体:"
+
+#: MainWindow.xaml:318
+msgid "Overwrite when the target output file exists"
+msgstr "当目标输出文件已存在时进行覆盖"
+
+#: MainWindow.xaml:316
+msgid "Overwrite:"
+msgstr "覆盖:"
+
+#: MainWindow.xaml:191
+msgid "Preview _command lines"
+msgstr "预览命令行(_C)"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\DataStructure\AudioFileItem.cs:91
+msgid "Processed"
+msgstr "已处理"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\DataStructure\AudioFileItem.cs:87
+#, csharp-format
+msgid "Processing ({0}%)"
+msgstr "处理中 ({0}%)"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1198
+#, csharp-format
+msgid "Processing completed with {0} file failures."
+msgstr "处理完成，但有 {0} 个文件处理失败。"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1193
+msgid "Processing completed."
+msgstr "所有处理已完成。"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1162
+msgid "Processing has been aborted."
+msgstr "处理过程已被中止。"
+
+#: MainWindow.xaml:327
+msgid "Progress"
+msgstr "进度"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\DataStructure\AudioFileItem.cs:83
+msgid "Queued"
+msgstr "队列中"
+
+#: MainWindow.xaml:197
+msgid "Re_move from list"
+msgstr "从列表中移除"
+
+#: MainWindow.xaml:211
+msgid "Remove Item"
+msgstr "移除"
+
+#: MainWindow.xaml:269 MainWindow.xaml:304
+msgid "Same as input"
+msgstr "和输入相同"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:472
+msgid "Select output folder"
+msgstr "选择输出目录"
+
+#: MainWindow.xaml:43
+msgid "Show Console Output"
+msgstr "显示命令行输出"
+
+#: MainWindow.xaml:306
+msgid "Specified:"
+msgstr "指定:"
+
+#: MainWindow.xaml:218
+msgid "Spleeter"
+msgstr "Spleeter"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1245
+#, csharp-format
+msgid "Spleeter program \"{0}\" does not exist"
+msgstr "Spleeter 程序 \"{0}\" 不存在"
+
+#: MainWindow.xaml:361
+msgid "Start Process"
+msgstr "开始处理"
+
+#: MainWindow.xaml:178
+msgid "Status"
+msgstr "状态"
+
+#: MainWindow.xaml:364
+msgid "Stop"
+msgstr "停止"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1364
+msgid "The Spleeter program did not terminate normally"
+msgstr "Spleeter 程序未正常结束运行"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1372
+#, csharp-format
+msgid ""
+"The Spleeter program has exited unexpectedly, error code: {0}.{1}Please "
+"select View - Show Console Output to see the error message."
+msgstr ""
+"Spleeter 程序异常退出，错误码: {0}.{1}请选择 查看 - 显示命令行输出 来查看错误"
+"信息。"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:681
+#, csharp-format
+msgid "The specified output folder \"{0}\" does not exist."
+msgstr "指定的输出目录 \"{0}\" 不存在。"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:673
+msgid "The specified output folder is empty."
+msgstr "指定的输出目录路径为空。"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:867
+#, csharp-format
+msgid ""
+"There are a large number of audio files in the selected folder ({0} found)."
+"{1}Are you sure to add them all?"
+msgstr ""
+"所选择的文件夹中有大量的音频文件 (共找到 {0} 个)，{1}确认要全部添加吗？"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1031
+msgid "There is not any file to process."
+msgstr "没有任何待处理的文件。"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\DataStructure\AudioFileItem.cs:79
+msgid "To Process"
+msgstr "待处理"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:868
+msgid "Too many files"
+msgstr "文件过多"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1097
+msgid "Unknown reason"
+msgstr "未知原因"
+
+#: AboutWindow.xaml:56
+msgid "Used open-source components:"
+msgstr "本程序所用开源组件:"
+
+#: MainWindow.xaml:53
+msgid "_About"
+msgstr "关于(_A)"
+
+#: MainWindow.xaml:47
+msgid "_English (built-in)"
+msgstr "_English (内置)"
+
+#: MainWindow.xaml:33
+msgid "_File"
+msgstr "文件(_F)"
+
+#: MainWindow.xaml:52
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: MainWindow.xaml:46
+msgid "_Language"
+msgstr "语言/_Language"
+
+#: MainWindow.xaml:194
+msgid "_Reset state to process"
+msgstr "重置为待处理状态(_R)"
+
+#: MainWindow.xaml:42
+msgid "_View"
+msgstr "查看(_V)"
+
+#: MainWindow.xaml:49
+msgid "简体中文(_S)"
+msgstr "简体中文(_S)"
+
+#~ msgid "22kHz (NOT recommended)"
+#~ msgstr "22kHz (不推荐)"
+
+#~ msgid "Add files..."
+#~ msgstr "添加文件..."
+
+#~ msgid "Add folders..."
+#~ msgstr "添加文件夹..."
+
+#~ msgid "Default"
+#~ msgstr "默认"
+
+#~ msgid "Edit..."
+#~ msgstr "编辑..."
+
+#~ msgid "Filename:"
+#~ msgstr "文件名:"
+
+#~ msgid "Frequency:"
+#~ msgstr "频率:"
+
+#~ msgid "Not Processed"
+#~ msgstr "尚未处理"
+
+#~ msgid "Remove All"
+#~ msgstr "移除全部"
+
+#~ msgid "Reset to initial state"
+#~ msgstr "重置为初始状态"
+
+#~ msgid "Select"
+#~ msgstr "选择"
+
+#~ msgid "Split into:"
+#~ msgstr "分离为:"
+
+#~ msgid "To check"
+#~ msgstr "待检查"
+
+#~ msgid "_English"
+#~ msgstr "English"
+
+#~ msgid "简体中文 (Simplified Chinese)"
+#~ msgstr "简体中文 (Simplified Chinese)"

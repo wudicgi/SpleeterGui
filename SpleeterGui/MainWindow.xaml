@@ -1,0 +1,371 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:i18n="clr-namespace:NGettext.Wpf;assembly=NGettext.Wpf"
+        xmlns:dd="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
+        xmlns:local="clr-namespace:SpleeterGui"
+        xmlns:util="clr-namespace:SpleeterGui.Util"
+        x:Class="SpleeterGui.MainWindow"
+        mc:Ignorable="d"
+        Title="Spleeter GUI" Width="650" Height="700"
+        Icon="application_icon.ico"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded" ContentRendered="Window_ContentRendered" KeyUp="Window_KeyUp">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SpleeterGui;component/Resources/ListViewStyle.xaml" />
+                <ResourceDictionary Source="/SpleeterGui;component/Resources/ListViewItemStyle.xaml" />
+                <ResourceDictionary Source="/SpleeterGui;component/Resources/GridViewColumnHeaderStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <i:Interaction.Behaviors>
+        <i18n:TrackCurrentCultureBehavior />
+    </i:Interaction.Behaviors>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="{i18n:Gettext _File}">
+                <MenuItem Header="{i18n:Gettext Add Files...}" InputGestureText="Ctrl+O"
+                          x:Name="menuItemFileAddFiles" Click="MenuItemFileAddFiles_Click"/>
+                <MenuItem Header="{i18n:Gettext Add Folders...}" InputGestureText="Ctrl+D"
+                          x:Name="menuItemFileAddFolders" Click="MenuItemFileAddFolders_Click"/>
+                <Separator/>
+                <MenuItem Header="{i18n:Gettext E_xit}" InputGestureText="Alt+F4"
+                          x:Name="menuItemFileExit" Click="MenuItemFileExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="{i18n:Gettext _View}">
+                <MenuItem Header="{i18n:Gettext Show Console Output}" IsCheckable="True"
+                          x:Name="menuItemViewShowConsoleWindow" Click="MenuItemViewShowConsoleWindow_Click"/>
+            </MenuItem>
+            <MenuItem Header="{i18n:Gettext _Language}" x:Name="menuItemLanguage">
+                <MenuItem Header="{i18n:Gettext _English (built-in)}" IsCheckable="True" Tag="en-US"
+                          Click="MenuItemLanguageItem_Click"/>
+                <MenuItem Header="{i18n:Gettext 简体中文(_S)}" IsCheckable="True" Tag="zh-CN"
+                          Click="MenuItemLanguageItem_Click" />
+            </MenuItem>
+            <MenuItem Header="{i18n:Gettext _Help}">
+                <MenuItem Header="{i18n:Gettext _About}"
+                          x:Name="menuItemHelpAbout" Click="MenuItemHelpAbout_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Margin="12,6" Grid.IsSharedSizeScope="True" x:Name="gridMain">
+            <Grid.Resources>
+                <Style x:Key="RegionLabel" TargetType="{x:Type TextBlock}">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+
+                <Style x:Key="ParamLabel" TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" Value="0,0,20,0"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="Gray" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+                <Style TargetType="{x:Type Separator}">
+                    <Setter Property="Margin" Value="-1,5,0,5"/>
+                </Style>
+
+                <Style TargetType="{x:Type StackPanel}">
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                </Style>
+
+                <Style TargetType="{x:Type RadioButton}">
+                    <Setter Property="Margin" Value="0,0,10,0"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="Gray" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+                <GridLength x:Key="GroupSpacing">18</GridLength>
+                <GridLength x:Key="RowSpacing">6</GridLength>
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <!-- Input -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="{StaticResource GroupSpacing}"/>
+
+                <!-- Spleeter -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource GroupSpacing}"/>
+
+                <!-- Output -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource GroupSpacing}"/>
+
+                <!-- Progress -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
+
+                <!-- Operation -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="{i18n:Gettext Input}" Style="{StaticResource RegionLabel}" />
+            <Separator Grid.Row="1" />
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="100" SharedSizeGroup="LabelColumn" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="8" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{i18n:Gettext Audio Files:}" Style="{StaticResource ParamLabel}" VerticalAlignment="Top" />
+
+                <ListView Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" MinHeight="100"
+                          x:Name="listViewAudioFileList" ItemsSource="{Binding AudioFileList}"
+                          util:ListViewExtensions.SelectedValues="{Binding AudioFileList_SelectedItems, Mode=TwoWay}"
+                          VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling"
+                          dd:DragDrop.IsDragSource="True" dd:DragDrop.IsDropTarget="True" dd:DragDrop.DropHandler="{Binding}"
+                          PreviewKeyDown="ListViewAudioFileList_PreviewKeyDown" PreviewKeyUp="ListViewAudioFileList_PreviewKeyUp"
+                          SelectionChanged="ListViewAudioFileList_SelectionChanged" MouseDown="ListViewAudioFileList_MouseDown"
+                          FocusVisualStyle="{x:Null}">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="330">
+                                <GridViewColumn.Header>
+                                    <GridViewColumnHeader Content="{i18n:Gettext Filename}" HorizontalContentAlignment="Left"/>
+                                </GridViewColumn.Header>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Left" Text="{Binding DisplayText_Filename}" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" Foreground="Black" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Width="130">
+                                <GridViewColumn.Header>
+                                    <GridViewColumnHeader Content="{i18n:Gettext Status}" HorizontalContentAlignment="Left"/>
+                                </GridViewColumn.Header>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Left" Text="{Binding DisplayText_Status}" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" Foreground="Black" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+
+                    <ListView.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="{i18n:Gettext Preview _command lines}"
+                                      x:Name="contextMenuItemPreviewCommandLines" Click="ContextMenuItemPreviewCommandLines_Click" />
+                            <Separator />
+                            <MenuItem Header="{i18n:Gettext _Reset state to process}"
+                                      x:Name="contextMenuItemResetToInitialState" Click="ContextMenuItemResetToInitialState_Click" />
+                            <Separator />
+                            <MenuItem Header="{i18n:Gettext Re_move from list}" InputGestureText="Del"
+                                      x:Name="contextMenuItemRemoveFromList" Click="ContextMenuItemRemoveFromList_Click" />
+                        </ContextMenu>
+                    </ListView.ContextMenu>
+                </ListView>
+
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button Content="{i18n:Gettext Add Files...}" Padding="16,4" Margin="0,0,10,0"
+                            x:Name="buttonAddFiles" Click="ButtonAddFiles_Click" />
+                    <Button Content="{i18n:Gettext Add Folders...}" Padding="16,4" Margin="0,0,10,0"
+                            x:Name="buttonAddFolders" Click="ButtonAddFolders_Click" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="{i18n:Gettext Remove Item}" Padding="12,4" Margin="10,0,0,0"
+                            x:Name="buttonRemoveSelected" Click="ButtonRemoveSelected_Click" IsEnabled="False" />
+                    <Button Content="{i18n:Gettext Clear All}" Padding="12,4" Margin="10,0,0,0"
+                            x:Name="buttonRemoveAll" Click="ButtonRemoveAll_Click" IsEnabled="False" />
+                </StackPanel>
+            </Grid>
+
+            <TextBlock Grid.Row="4" Text="{i18n:Gettext Spleeter}" Style="{StaticResource RegionLabel}" />
+            <Separator Grid.Row="5" />
+            <Grid Grid.Row="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="8"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="LabelColumn" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{i18n:Gettext Model:}" Style="{StaticResource ParamLabel}" />
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch">
+                    <ComboBox x:Name="comboBoxSpleeterModel" ItemsSource="{Binding SpleeterModels}"
+                              SelectedItem="{Binding SelectedSpleeterModel}" DisplayMemberPath="DisplayText" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal"
+                            x:Name="stackPanelSpleeterModelFrequency">
+                    <RadioButton Content="{i18n:Gettext 11kHz (normal)}"
+                                 x:Name="radioButtonSpleeterModelFrequency11khz" />
+                    <RadioButton Content="{i18n:Gettext 16kHz (high quality)}"
+                                 x:Name="radioButtonSpleeterModelFrequency16khz" />
+                    <RadioButton Content="{i18n:Gettext 22kHz (may produce artifacts)}"
+                                 x:Name="radioButtonSpleeterModelFrequency22khz" IsChecked="True" />
+                </StackPanel>
+            </Grid>
+
+            <TextBlock Grid.Row="8" Text="{i18n:Gettext Output}" Style="{StaticResource RegionLabel}" />
+            <Separator Grid.Row="9" />
+            <Grid Grid.Row="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="{StaticResource RowSpacing}"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="{StaticResource RowSpacing}"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="{StaticResource RowSpacing}"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="{StaticResource RowSpacing}"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="LabelColumn" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{i18n:Gettext Format:}" Style="{StaticResource ParamLabel}" />
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <RadioButton Content="{i18n:Gettext Same as input}" IsChecked="True"
+                                 x:Name="radioButtonOutputFormatSameAsInput" />
+                    <RadioButton Content="{i18n:Gettext MP3}"
+                                 x:Name="radioButtonOutputFormatMp3" />
+                    <RadioButton Content="{i18n:Gettext M4A}"
+                                 x:Name="radioButtonOutputFormatM4a" />
+                    <RadioButton Content="{i18n:Gettext FLAC}"
+                                 x:Name="radioButtonOutputFormatFlac"
+                                 Checked="RadioButtonOutputFormatFlac_CheckedOrUnchecked"
+                                 Unchecked="RadioButtonOutputFormatFlac_CheckedOrUnchecked" />
+                </StackPanel>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{i18n:Gettext Bitrate:}" Style="{StaticResource ParamLabel}"
+                           x:Name="textBlockOutputBitrate" />
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal"
+                            x:Name="stackPanelOutputBitrate">
+                    <RadioButton Content="{i18n:Gettext 128kbps}"
+                                 x:Name="radioButtonOutputBitrate128kbps" />
+                    <RadioButton Content="{i18n:Gettext 192kbps}"
+                                 x:Name="radioButtonOutputBitrate192kbps" />
+                    <RadioButton Content="{i18n:Gettext 256kbps}" IsChecked="True"
+                                 x:Name="radioButtonOutputBitrate256kbps" />
+                    <RadioButton Content="{i18n:Gettext 320kbps}"
+                                 x:Name="radioButtonOutputBitrate320kbps" />
+                </StackPanel>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{i18n:Gettext Folder:}" Style="{StaticResource ParamLabel}" />
+                <Grid Grid.Row="4" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <RadioButton Grid.Column="0" Content="{i18n:Gettext Same as input}" IsChecked="True"
+                                 x:Name="radioButtonOutputFolderSameAsInput" />
+                    <RadioButton Grid.Column="1" Content="{i18n:Gettext Specified:}"
+                                 x:Name="radioButtonOutputFolderSpecified"
+                                 Checked="RadioButtonOutputFolderSpecified_CheckedOrUnchecked"
+                                 Unchecked="RadioButtonOutputFolderSpecified_CheckedOrUnchecked" />
+                    <TextBox Grid.Column="2" MinWidth="200"
+                             x:Name="textBoxOutputFolderSpecifiedPath" IsEnabled="False" />
+                    <Button Grid.Column="3" Content="{i18n:Gettext Browse...}" Padding="10,1" Margin="10,0,0,0"
+                            x:Name="buttonOutputFolderBrowse" Click="ButtonOutputFolderBrowse_Click" IsEnabled="False" />
+                </Grid>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{i18n:Gettext Overwrite:}" Style="{StaticResource ParamLabel}" />
+                <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Vertical">
+                    <CheckBox Content="{i18n:Gettext Overwrite when the target output file exists}"
+                              x:Name="checkBoxOutputOverwriteExisted" />
+                </StackPanel>
+                
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{i18n:Gettext Other Options:}" Style="{StaticResource ParamLabel}" />
+                <TextBox Grid.Row="8" Grid.Column="1" x:Name="textBoxOtherCommandLineOptions"
+                         Padding="0,1" VerticalAlignment="Center" />
+            </Grid>
+
+            <TextBlock Grid.Row="12" Text="{i18n:Gettext Progress}" Style="{StaticResource RegionLabel}" />
+            <Separator Grid.Row="13" />
+            <Grid Grid.Row="14">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="{StaticResource RowSpacing}"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="LabelColumn" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{i18n:Gettext Overall:}" Style="{StaticResource ParamLabel}" />
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <ProgressBar Minimum="0" Maximum="10000" Value="0" Height="18" x:Name="progressBarOverall" />
+                    <TextBlock x:Name="textBlockProgressOverall" Text="0.00%" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{i18n:Gettext Current File:}" Style="{StaticResource ParamLabel}" />
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <ProgressBar Minimum="0" Maximum="10000" Value="0" Height="18" x:Name="progressBarCurrentFile" />
+                    <TextBlock x:Name="textBlockProgressCurrentFile" Text="0.00%" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="110"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="{i18n:Gettext Start Process}" Padding="18,6,18,6" Margin="0,0,20,0"
+                            VerticalAlignment="Bottom"
+                            x:Name="buttonStartProcess" Click="ButtonStartProcess_Click" />
+                    <Button Content="{i18n:Gettext Stop}" Padding="18,6,18,6" IsEnabled="False"
+                            VerticalAlignment="Bottom"
+                            x:Name="buttonStop" Click="ButtonStop_Click" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
