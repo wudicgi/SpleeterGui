@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SpleeterGui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-02 22:50+0800\n"
-"PO-Revision-Date: 2024-02-02 22:50+0800\n"
+"POT-Creation-Date: 2024-02-02 23:37+0800\n"
+"PO-Revision-Date: 2024-02-02 23:38+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -59,14 +59,14 @@ msgstr "256kbps"
 msgid "320kbps"
 msgstr "320kbps"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:933
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:934
 #, csharp-format
 msgid ""
 "A total of {0} files failed to be added, the files at the specified path may "
 "not exist."
 msgstr "共有 {0} 个文件添加失败，指定路径的文件可能不存在。"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1163
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1172
 msgid "Aborted"
 msgstr "中止"
 
@@ -82,19 +82,19 @@ msgstr "添加文件..."
 msgid "Add Folders..."
 msgstr "添加文件夹..."
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:800
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:801
 msgid "Add files"
 msgstr "添加文件"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:825
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:826
 msgid "Add folders"
 msgstr "添加文件夹"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:803
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:804
 msgid "All files"
 msgstr "所有文件"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1129
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1138
 #, csharp-format
 msgid "An exception occurred during processing:{0}{1}{0}{0}{2}"
 msgstr "处理过程中产生异常:{0}{1}{0}{0}{2}"
@@ -103,7 +103,7 @@ msgstr "处理过程中产生异常:{0}{1}{0}{0}{2}"
 msgid "Audio Files:"
 msgstr "音频文件:"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:804
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:805
 msgid "Audio files"
 msgstr "音频文件"
 
@@ -131,8 +131,8 @@ msgstr "移除全部"
 msgid "Command lines"
 msgstr "命令行"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1194
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1199
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1203
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1208
 msgid "Completed"
 msgstr "已完成"
 
@@ -144,7 +144,7 @@ msgstr "命令行输出"
 msgid "Current File:"
 msgstr "当前文件:"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1098
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1107
 msgid "Do you want to continue processing?"
 msgstr "要继续处理吗？"
 
@@ -152,10 +152,12 @@ msgstr "要继续处理吗？"
 msgid "E_xit"
 msgstr "退出(_X)"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:674
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:682
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1031
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1131
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:582
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:675
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:683
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1013
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1040
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1140
 msgid "Error"
 msgstr "错误"
 
@@ -172,16 +174,16 @@ msgstr "FLAC"
 msgid "Failed"
 msgstr "失败"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:934
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:935
 msgid "Failed to add some files"
 msgstr "部分文件添加失败"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1099
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1108
 #, csharp-format
 msgid "Failed to process file {0}"
 msgstr "处理文件 {0} 失败"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1315
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1324
 #, csharp-format
 msgid "Failed to run Spleeter program:{0}{1}"
 msgstr "运行 Spleeter 程序失败:{0}{1}"
@@ -222,9 +224,17 @@ msgstr "模型:"
 msgid "Not found \"models\" folder"
 msgstr "没有找到 \"models\" 文件夹"
 
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1012
+msgid "Not found Spleeter.exe in current folder."
+msgstr "在当前文件夹中没有找到 Spleeter.exe 文件。"
+
 #: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:194
 msgid "Not found any folder in \"models\" folder"
 msgstr "在 \"models\" 文件夹中没有找到任何文件夹"
+
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:581
+msgid "Not selected a valid Spleeter model."
+msgstr "没有选择一个合法的 Spleeter 模型。"
 
 #: AboutWindow.xaml:116
 msgid "OK"
@@ -267,16 +277,16 @@ msgstr "已处理"
 msgid "Processing ({0}%)"
 msgstr "处理中 ({0}%)"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1198
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1207
 #, csharp-format
 msgid "Processing completed with {0} file failures."
 msgstr "处理完成，但有 {0} 个文件处理失败。"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1193
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1202
 msgid "Processing completed."
 msgstr "所有处理已完成。"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1162
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1171
 msgid "Processing has been aborted."
 msgstr "处理过程已被中止。"
 
@@ -316,7 +326,7 @@ msgstr "指定:"
 msgid "Spleeter"
 msgstr "Spleeter"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1245
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1254
 #, csharp-format
 msgid "Spleeter program \"{0}\" does not exist"
 msgstr "Spleeter 程序 \"{0}\" 不存在"
@@ -333,11 +343,11 @@ msgstr "状态"
 msgid "Stop"
 msgstr "停止"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1364
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1373
 msgid "The Spleeter program did not terminate normally"
 msgstr "Spleeter 程序未正常结束运行"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1372
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1381
 #, csharp-format
 msgid ""
 "The Spleeter program has exited unexpectedly, error code: {0}.{1}Please "
@@ -346,16 +356,16 @@ msgstr ""
 "Spleeter 程序异常退出，错误码: {0}.{1}请选择 查看 - 显示命令行输出 来查看错误"
 "信息。"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:681
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:682
 #, csharp-format
 msgid "The specified output folder \"{0}\" does not exist."
 msgstr "指定的输出目录 \"{0}\" 不存在。"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:673
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:674
 msgid "The specified output folder is empty."
 msgstr "指定的输出目录路径为空。"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:867
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:868
 #, csharp-format
 msgid ""
 "There are a large number of audio files in the selected folder ({0} found)."
@@ -363,7 +373,7 @@ msgid ""
 msgstr ""
 "所选择的文件夹中有大量的音频文件 (共找到 {0} 个)，{1}确认要全部添加吗？"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1031
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1040
 msgid "There is not any file to process."
 msgstr "没有任何待处理的文件。"
 
@@ -371,11 +381,11 @@ msgstr "没有任何待处理的文件。"
 msgid "To Process"
 msgstr "待处理"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:868
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:869
 msgid "Too many files"
 msgstr "文件过多"
 
-#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1097
+#: D:\Projects\SpleeterGui\SpleeterGui\MainWindow.xaml.cs:1106
 msgid "Unknown reason"
 msgstr "未知原因"
 

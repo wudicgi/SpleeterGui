@@ -578,7 +578,8 @@ namespace SpleeterGui
             string spleeterModelFolderName = SelectedSpleeterModel?.FolderName;
             if (spleeterModelFolderName == null)
             {
-                MessageBox.Show("spleeterModelFolderName is null", "Internal Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Translation._("Not selected a valid Spleeter model."),
+                    Translation._("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return null;
             }
 
@@ -1005,6 +1006,14 @@ namespace SpleeterGui
 
         public void StartProcess()
         {
+            string spleeterExeFullPath = FileSystemUtil.GetFullPathBasedOnProgramFile("Spleeter.exe");
+            if (!File.Exists(spleeterExeFullPath))
+            {
+                MessageBox.Show(Translation._("Not found Spleeter.exe in current folder."),
+                    Translation._("Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             ConfigParameters configParameters = GetConfigParameters();
             if (configParameters == null)
             {
